@@ -1,24 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./styles/vars";
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+@import "./styles/global";
 
-.container {
-  display: grid;
-  grid-template-columns: minmax(auto, 1024px);
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1024px) {
-    padding: 0 1rem;
-  }
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
+@import "./styles/utils/containers";
