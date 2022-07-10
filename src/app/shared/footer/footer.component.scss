@@ -1,0 +1,15 @@
+@import "../../../styles/vars";
+
+.Footer {
+  background-color: $color-black;
+  color: $color-white;
+  padding: 2rem 0;
+
+  .mat-fab {
+    background-color: $color-white;
+  }
+}
+
+p {
+  margin: 0;
+}

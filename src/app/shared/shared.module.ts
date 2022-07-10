@@ -7,10 +7,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HeaderComponent } from './header/header.component';
 import { ImageRenderPipe } from './pipes/image-render.pipe';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [HeaderComponent, ImageRenderPipe],
+  declarations: [HeaderComponent, ImageRenderPipe, FooterComponent],
   imports: [CommonModule, RouterModule, MaterialModule, FlexLayoutModule],
-  exports: [HeaderComponent, ImageRenderPipe],
+  exports: [HeaderComponent, FooterComponent, ImageRenderPipe],
 })
 export class SharedModule {}
