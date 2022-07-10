@@ -1,0 +1,17 @@
+mat-toolbar {
+  background-color: transparent;
+}
+
+.Header__container {
+  display: flex;
+}
+
+.Header__link {
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin: 0 1rem;
+}
+
+a:hover {
+  cursor: pointer;
+}
