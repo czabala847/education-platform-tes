@@ -1,0 +1,36 @@
+.Category {
+  padding: 3rem 0;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &__list {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  &__card {
+    text-align: center;
+    transition: 0.3s;
+    margin-bottom: 1rem;
+
+    figure {
+      margin: 0;
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    img {
+      width: 40%;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+}

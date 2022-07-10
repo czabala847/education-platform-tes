@@ -1,17 +1,2 @@
 <app-hero></app-hero>
-
-<section class="Hero__category">
-  <div class="container" fxLayout="column" fxLayoutAlign="center center">
-    <h2>Explora por categorías</h2>
-    <p>
-      Todos nuestros contenidos están clasificados por categorías, selecciona
-      las de tu interés
-    </p>
-    <div class="Category__list" fxLayout="row" fxLayoutGap="30px">
-      <mat-card>Simple card</mat-card>
-      <mat-card>Simple card</mat-card>
-      <mat-card>Simple card</mat-card>
-      <mat-card>Simple card</mat-card>
-    </div>
-  </div>
-</section>
+<app-category-list [categories]="categories"></app-category-list>
