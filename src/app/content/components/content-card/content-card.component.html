@@ -1,12 +1,24 @@
 <mat-card class="ContentCard">
   <img mat-card-image [src]="content.image | imageRender" />
   <mat-card-content>
-    <mat-card-title>{{ content.title }}</mat-card-title>
+    <mat-card-title class="ContentCard__title">{{
+      content.title
+    }}</mat-card-title>
     <p>
-      {{ content.description }}
+      {{
+        content.description.length > 75
+          ? (content.description | slice: 0:74)
+          : content.description
+      }}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button [routerLink]="['/content/', content.id]">Ver más</button>
+    <button
+      color="primary"
+      mat-raised-button
+      [routerLink]="['/content/', content.id]"
+    >
+      Ver más
+    </button>
   </mat-card-actions>
 </mat-card>

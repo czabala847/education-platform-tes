@@ -1,0 +1,31 @@
+<section class="ContentDetail">
+  <div class="container">
+    <div class="ContentDetail__container">
+      <div class="ContentDetail__content" *ngIf="content">
+        <p>{{ content.category.name }}</p>
+        <h1 class="ContentDetail__title">{{ content.title }}</h1>
+        <p>
+          {{ content.description }}
+        </p>
+        <p>
+          {{ content.content }}
+        </p>
+        <p>
+          Fecha límite de acceso : {{ content.date_limit | date: "mediumDate" }}
+        </p>
+
+        <mat-chip-list aria-label="Etiquetas">
+          <mat-chip *ngFor="let tag of content.tags" color="accent" selected>{{
+            tag
+          }}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </div>
+  </div>
+
+  <figure>
+    <img [src]="content.image | imageRender" *ngIf="content" />
+  </figure>
+
+  <div class="overlay"></div>
+</section>

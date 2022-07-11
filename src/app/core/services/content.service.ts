@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { Content } from '../interfaces/ContentInterface';
@@ -21,6 +21,14 @@ export class ContentService {
     return this.http.get<Content[]>(urlFetch).pipe(
       catchError((error: HttpErrorResponse) => {
         return of([]);
+      })
+    );
+  }
+
+  getById(id: number): Observable<Content[] | null> {
+    return this.http.get<Content[] | null>(`${this.urlApi}/content/${id}`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return of(null);
       })
     );
   }

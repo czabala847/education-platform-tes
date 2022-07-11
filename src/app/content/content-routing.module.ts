@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContentComponent } from './pages/content/content.component';
+import { ContentDetailComponent } from './pages/content-detail/content-detail.component';
 import { ContentListComponent } from './pages/content-list/content-list.component';
 
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: ContentComponent,
+    component: ContentDetailComponent,
   },
 ];
 
