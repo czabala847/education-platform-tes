@@ -5,6 +5,7 @@ import { ContentService } from 'src/app/core/services/content.service';
 
 import { Category } from 'src/app/core/interfaces/CategoryInterface';
 import { switchMap } from 'rxjs/operators';
+import { Content } from 'src/app/core/interfaces/ContentInterface';
 
 @Component({
   selector: 'app-content-list',
@@ -14,6 +15,7 @@ import { switchMap } from 'rxjs/operators';
 export class ContentListComponent implements OnInit {
   category_id: number = 0;
   categories: Category[] = [];
+  contents: Content[] = [];
 
   constructor(
     private categoryService: CategoryService,
@@ -32,7 +34,7 @@ export class ContentListComponent implements OnInit {
         })
       )
       .subscribe((data) => {
-        console.log(data);
+        this.contents = data;
       });
 
     this.categoryService
