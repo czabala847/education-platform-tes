@@ -27,4 +27,10 @@
       box-shadow: inset 0px -3px 1px $color-purple;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    mat-button-toggle-group {
+      flex-wrap: wrap;
+    }
+  }
 }

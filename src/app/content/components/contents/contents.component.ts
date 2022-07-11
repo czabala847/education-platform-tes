@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Content } from 'src/app/core/interfaces/ContentInterface';
 
 @Component({
@@ -6,10 +6,6 @@ import { Content } from 'src/app/core/interfaces/ContentInterface';
   templateUrl: './contents.component.html',
   styleUrls: ['./contents.component.scss'],
 })
-export class ContentsComponent implements OnInit {
+export class ContentsComponent {
   @Input() contents: Content[] = [];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

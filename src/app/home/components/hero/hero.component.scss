@@ -17,6 +17,7 @@
     font-size: 4rem;
     margin-bottom: 3rem;
     font-weight: bold;
+    line-height: normal;
   }
 
   &__description {
@@ -48,7 +49,6 @@
   @media only screen and (max-width: 768px) {
     &__title {
       font-size: 3rem;
-      line-height: normal;
     }
 
     mat-form-field {

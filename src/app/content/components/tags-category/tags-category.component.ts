@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Category } from 'src/app/core/interfaces/CategoryInterface';
 
 @Component({
@@ -6,11 +6,7 @@ import { Category } from 'src/app/core/interfaces/CategoryInterface';
   templateUrl: './tags-category.component.html',
   styleUrls: ['./tags-category.component.scss'],
 })
-export class TagsCategoryComponent implements OnInit {
+export class TagsCategoryComponent {
   @Input() categories: Category[] = [];
   @Input() category_id: number = 0;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
