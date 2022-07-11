@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Content } from 'src/app/core/interfaces/ContentInterface';
 import { ContentService } from 'src/app/core/services/content.service';
+import { ContentViewedService } from 'src/app/core/services/content-viewed.service';
 
 @Component({
   selector: 'app-content-detail',
@@ -15,7 +16,8 @@ export class ContentDetailComponent implements OnInit {
   constructor(
     private contentService: ContentService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private contentViewedService: ContentViewedService
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class ContentDetailComponent implements OnInit {
       .subscribe((content) => {
         if (content !== null) {
           this.content = content[0];
+          this.contentViewedService.addViewed(this.content.id);
         } else {
           this.router.navigate(['404']);
         }

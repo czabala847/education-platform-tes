@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Content } from 'src/app/core/interfaces/ContentInterface';
+import { ContentViewedService } from 'src/app/core/services/content-viewed.service';
 
 @Component({
   selector: 'app-content-card',
@@ -8,8 +10,15 @@ import { Content } from 'src/app/core/interfaces/ContentInterface';
 })
 export class ContentCardComponent implements OnInit {
   @Input() content!: Content;
+  viewed: boolean = false;
 
-  constructor() {}
+  constructor(private contentViewedService: ContentViewedService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.content) {
+      this.viewed = this.contentViewedService.searchViewed(this.content.id);
+    }
+  }
+
+  openDialog() {}
 }
