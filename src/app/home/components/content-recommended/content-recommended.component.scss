@@ -1,0 +1,12 @@
+@import "../../../../styles/vars";
+
+.Recommended {
+  padding: 3rem 0;
+  // text-align: center;
+  background-color: $color-white;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}

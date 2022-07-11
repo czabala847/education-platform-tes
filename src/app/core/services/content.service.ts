@@ -15,14 +15,17 @@ export class ContentService {
   constructor(private http: HttpClient) {}
 
   getByCategory(category: number): Observable<Content[]> {
-    let urlFetch = `${this.urlApi}/content`;
-    if (category > 0) urlFetch = `${urlFetch}/category/${category}`;
+    if (category > 0) {
+      return this.http
+        .get<Content[]>(`${this.urlApi}/content/category/${category}`)
+        .pipe(
+          catchError((error: HttpErrorResponse) => {
+            return of([]);
+          })
+        );
+    }
 
-    return this.http.get<Content[]>(urlFetch).pipe(
-      catchError((error: HttpErrorResponse) => {
-        return of([]);
-      })
-    );
+    return this.getAll();
   }
 
   getById(id: number): Observable<Content[] | null> {
@@ -31,5 +34,9 @@ export class ContentService {
         return of(null);
       })
     );
+  }
+
+  getAll(): Observable<Content[]> {
+    return this.http.get<Content[]>(`${this.urlApi}/content`);
   }
 }
