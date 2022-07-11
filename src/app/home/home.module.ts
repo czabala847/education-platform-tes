@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 
@@ -11,12 +10,6 @@ import { CategoryListComponent } from './components/category-list/category-list.
 
 @NgModule({
   declarations: [HomeComponent, HeroComponent, CategoryListComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    FlexLayoutModule,
-    MaterialModule,
-    SharedModule,
-  ],
+  imports: [CommonModule, HomeRoutingModule, MaterialModule, SharedModule],
 })
 export class HomeModule {}

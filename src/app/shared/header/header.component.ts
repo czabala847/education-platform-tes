@@ -8,6 +8,7 @@ import { Component, HostListener } from '@angular/core';
 export class HeaderComponent {
   scroll: boolean = false;
 
+  //Cambiar color header, al hacer scroll
   @HostListener('window:scroll', [])
   onScroll(): void {
     if (window.pageYOffset > 0) {

@@ -1,0 +1,43 @@
+<section class="Contents">
+  <div class="container">
+    <div
+      class="Contents__container"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      <h1>Contenidos disponibles</h1>
+    </div>
+  </div>
+</section>
+
+<section class="Tags">
+  <div class="container">
+    <mat-button-toggle-group
+      name="contentCategory"
+      class="Tags__group"
+      *ngIf="categories.length > 0; else loading"
+    >
+      <mat-button-toggle
+        value="0"
+        routerLink="/content"
+        class="Tags__button"
+        [class.active]="!category_id"
+        >Todo</mat-button-toggle
+      >
+      <mat-button-toggle
+        *ngFor="let category of categories"
+        [value]="category.id"
+        [routerLink]="['/content/category/', category.id]"
+        class="Tags__button active"
+        [class.active]="category.id == category_id"
+        >{{ category.name | titlecase }}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+    </ng-template>
+  </div>
+</section>
+
+<router-outlet></router-outlet>

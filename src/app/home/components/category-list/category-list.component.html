@@ -23,7 +23,7 @@
           fxFlex.sm="30"
           *ngFor="let category of categories"
           class="Category__card"
-          [routerLink]="['/category/', category.id]"
+          [routerLink]="['/content/category/', category.id]"
         >
           <figure>
             <img [src]="category.image | imageRender" />

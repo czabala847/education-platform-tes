@@ -5,6 +5,7 @@ mat-toolbar {
   position: fixed;
   z-index: 3;
   color: $color-white;
+  height: $height-header;
 
   &.bottom {
     background-color: $color-purple;

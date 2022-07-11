@@ -12,6 +12,11 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [HeaderComponent, ImageRenderPipe, FooterComponent],
   imports: [CommonModule, RouterModule, MaterialModule, FlexLayoutModule],
-  exports: [HeaderComponent, FooterComponent, ImageRenderPipe],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    ImageRenderPipe,
+    FlexLayoutModule,
+  ],
 })
 export class SharedModule {}
