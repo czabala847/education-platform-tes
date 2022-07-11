@@ -1,0 +1,31 @@
+@import "../../styles/vars";
+
+.NotFound {
+  min-height: $height-content-detail;
+  background-color: $color-purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: $color-white;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+  }
+
+  & img {
+    width: 30%;
+    // transition: 0.3s;
+
+    @media only screen and (max-width: 768px) {
+      width: 40%;
+    }
+
+    @media only screen and (max-width: 425px) {
+      width: 50%;
+    }
+  }
+}
