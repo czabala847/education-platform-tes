@@ -8,4 +8,5 @@ import { Content } from 'src/app/core/interfaces/ContentInterface';
 })
 export class ContentsComponent {
   @Input() contents: Content[] = [];
+  @Input() loading: boolean = false;
 }

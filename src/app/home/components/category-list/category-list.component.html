@@ -16,6 +16,7 @@
         fxLayout.xs="column"
         xLayoutAlign="center center"
         fxLayoutGap="30px"
+        *ngIf="categories.length > 0 && loading === false"
       >
         <mat-card
           fxFlex="20"
@@ -31,6 +32,7 @@
           {{ category.name | titlecase }}
         </mat-card>
       </div>
+      <mat-spinner *ngIf="loading"></mat-spinner>
     </div>
   </div>
 </section>

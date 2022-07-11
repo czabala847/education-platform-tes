@@ -16,6 +16,7 @@ export class ContentListComponent implements OnInit {
   category_id: number = 0;
   categories: Category[] = [];
   contents: Content[] = [];
+  loading: boolean = false;
 
   constructor(
     private categoryService: CategoryService,
@@ -27,6 +28,7 @@ export class ContentListComponent implements OnInit {
     this.route.params
       .pipe(
         switchMap(({ id }) => {
+          this.loading = true;
           if (id) {
             this.category_id = id;
           }
@@ -35,6 +37,7 @@ export class ContentListComponent implements OnInit {
       )
       .subscribe((data) => {
         this.contents = data;
+        this.loading = false;
       });
 
     this.categoryService

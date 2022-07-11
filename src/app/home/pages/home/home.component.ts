@@ -10,6 +10,7 @@ import { CategoryService } from 'src/app/core/services/category.service';
 })
 export class HomeComponent implements OnInit {
   categories: Category[] = [];
+  loading: boolean = false;
 
   constructor(
     private categoryService: CategoryService,
@@ -23,8 +24,11 @@ export class HomeComponent implements OnInit {
       if (section) section.scrollIntoView();
     });
 
+    this.loading = true;
+
     this.categoryService.getAll().subscribe((categories) => {
       this.categories = categories;
+      this.loading = false;
     });
   }
 }

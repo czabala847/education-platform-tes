@@ -1,10 +1,17 @@
 <section class="Contents">
   <div class="container">
-    <div class="Contents__container">
+    <div
+      class="Contents__container"
+      *ngIf="contents.length > 0 && loading === false"
+    >
       <app-content-card
         *ngFor="let content of contents"
         [content]="content"
       ></app-content-card>
     </div>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <mat-card *ngIf="loading === false && contents.length === 0">
+      No se encontraron contenidos para esta categoría
+    </mat-card>
   </div>
 </section>

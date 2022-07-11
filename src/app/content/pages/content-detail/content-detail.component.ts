@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Content } from 'src/app/core/interfaces/ContentInterface';
 import { ContentService } from 'src/app/core/services/content.service';
@@ -14,7 +14,8 @@ export class ContentDetailComponent implements OnInit {
 
   constructor(
     private contentService: ContentService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -27,6 +28,8 @@ export class ContentDetailComponent implements OnInit {
       .subscribe((content) => {
         if (content !== null) {
           this.content = content[0];
+        } else {
+          this.router.navigate(['404']);
         }
       });
   }

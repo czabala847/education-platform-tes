@@ -8,4 +8,5 @@ import { Category } from 'src/app/core/interfaces/CategoryInterface';
 })
 export class CategoryListComponent {
   @Input() categories: Category[] = [];
+  @Input() loading: boolean = false;
 }
