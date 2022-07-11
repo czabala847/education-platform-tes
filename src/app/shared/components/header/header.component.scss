@@ -17,7 +17,30 @@ mat-toolbar {
 }
 
 .Header__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "logo menu login";
+}
+
+.Header__logo {
+  grid-area: logo;
+  position: relative;
+}
+
+.Header__Menu--mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Header__menu {
+  grid-area: menu;
+}
+
+.Header__login {
+  text-align: right;
+  grid-area: login;
 }
 
 .Header__link {
@@ -36,5 +59,58 @@ mat-toolbar {
 
   &--button {
     border-color: $color-white;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  mat-toolbar {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .Header__container {
+    grid-template-columns: 70% 1fr;
+    grid-template-areas:
+      "logo logo"
+      "menu login";
+  }
+
+  .Header__logo {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .Header__menu {
+    text-align: right;
+  }
+
+  .Header__login {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Header__container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo";
+  }
+
+  .Header__logo {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .Header__menu {
+    text-align: right;
+    display: none;
+  }
+
+  .Header__login {
+    text-align: left;
+    display: none;
+  }
+
+  .Header__Menu--mobile {
+    display: block;
   }
 }

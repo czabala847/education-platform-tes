@@ -1,17 +1,33 @@
 <mat-toolbar [ngClass]="scroll ? 'bottom' : 'top'">
   <div class="container">
     <div class="Header__container">
-      <div fxShow="true" fxHide.gt-sm="true">
-        <!-- <button mat-icon-button (click)="sidenav.toggle()"> -->
-        <button mat-icon-button>
-          <mat-icon>menu</mat-icon>
-        </button>
+      <div class="Header__logo">
+        <a class="Header__link--logo Header__logo" routerLink="/">
+          Education Platform
+        </a>
+
+        <div class="Header__Menu--mobile">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button routerLink="/" mat-menu-item>
+              <mat-icon>home</mat-icon>
+              <span>Inicio</span>
+            </button>
+            <button mat-menu-item routerLink="/home" fragment="categories">
+              <mat-icon>category</mat-icon>
+              <span>Categorias</span>
+            </button>
+            <button mat-menu-item routerLink="/content">
+              <mat-icon>description</mat-icon>
+              <span>Contenido</span>
+            </button>
+          </mat-menu>
+        </div>
       </div>
 
-      <a class="Header__link--logo" routerLink="/"> Education Platform </a>
-      <span class="spacer"></span>
-
-      <div fxShow="true" fxHide.lt-md="true">
+      <div class="Header__menu">
         <a mat-button class="Header__link" routerLink="/">Inicio</a>
         <a
           mat-button
@@ -23,9 +39,7 @@
         <a mat-button class="Header__link" routerLink="/content">Contenido</a>
       </div>
 
-      <span class="spacer"></span>
-
-      <div fxShow="true" fxHide.lt-md="true">
+      <div class="Header__login">
         <a class="Header__link--button" mat-stroked-button routerLink="/"
           >Iniciar sesión</a
         >
@@ -33,22 +47,3 @@
     </div>
   </div>
 </mat-toolbar>
-<!-- <mat-sidenav-container fxFlexFill class="example-container">
-  <mat-sidenav
-    color="primary"
-    #sidenav
-    fxLayout="column"
-    mode="over"
-    opened="false"
-    fxHide.gt-sm="true"
-  >
-    <div fxLayout="column">
-      <a mat-button routerLink="/about-us">About us</a>
-      <a mat-button routerLink="/prices">Prices</a>
-      <a mat-button routerLink="/start-page">Start page</a>
-      <a mat-button routerLink="/offer">Offer</a>
-      <a mat-button routerLink="/contact">Contact</a>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content fxFlexFill> Awesome content </mat-sidenav-content>
-</mat-sidenav-container> -->
