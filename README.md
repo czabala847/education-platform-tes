@@ -12,4 +12,4 @@ filtrar los contenidos por su respectiva categoria, ver detalle de un contenido,
 - [Angular](https://github.com/angular/angular-cli) versión 14
 - [Angular Flex Layout](https://github.com/angular/flex-layout) Para el manejo de grillas.
 - [Angular Material](https://material.angular.io/)
-- SCSS como preprocesador de CSS.
+- SASS como preprocesador de CSS.
