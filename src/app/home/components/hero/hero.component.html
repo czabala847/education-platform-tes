@@ -1,17 +1,19 @@
 <section class="Hero" fxLayout="column" fxLayoutAlign="center center">
   <div class="container">
-    <p class="Hero__description">
+    <p class="Hero__description animate__animated animate__fadeInDown">
       Creemos que todos somos aprendices para toda la vida #LifelongLearning
     </p>
-    <h1 class="Hero__title">Aprende algo nuevo hoy!</h1>
+    <h1 class="Hero__title animate__animated animate__fadeIn">
+      Aprende algo nuevo hoy!
+    </h1>
 
-    <form autocomplete="off">
+    <app-search-content></app-search-content>
+    <!-- <form autocomplete="off" class="animate__animated animate__fadeInUp">
       <mat-form-field appearance="fill">
         <mat-label>¿Que quieres aprender?</mat-label>
         <input matInput placeholder="Angular JS..." />
       </mat-form-field>
-      <!-- <button mat-button>Buscar</button> -->
-    </form>
+    </form> -->
   </div>
   <figure class="Hero__figure">
     <img

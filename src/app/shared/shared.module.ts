@@ -10,6 +10,7 @@ import { ImageRenderPipe } from './pipes/image-render.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentsComponent } from './components/contents/contents.component';
 import { ContentCardComponent } from './components/content-card/content-card.component';
+import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confirm.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ContentCardComponent } from './components/content-card/content-card.com
     FooterComponent,
     ContentCardComponent,
     ContentsComponent,
+    DialogConfirmComponent,
   ],
   imports: [CommonModule, RouterModule, MaterialModule, FlexLayoutModule],
   exports: [
@@ -26,6 +28,7 @@ import { ContentCardComponent } from './components/content-card/content-card.com
     ImageRenderPipe,
     FlexLayoutModule,
     ContentsComponent,
+    DialogConfirmComponent,
   ],
 })
 export class SharedModule {}

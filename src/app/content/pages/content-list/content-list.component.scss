@@ -17,6 +17,10 @@
     line-height: normal;
   }
 
+  &__list {
+    min-height: calc(100vh - 440px);
+  }
+
   @media only screen and(max-width: 768px) {
     padding-top: 6rem;
   }

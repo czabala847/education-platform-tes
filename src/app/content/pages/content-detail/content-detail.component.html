@@ -2,8 +2,10 @@
   <div class="container">
     <div class="ContentDetail__container">
       <div class="ContentDetail__content" *ngIf="content">
-        <p>{{ content.category.name }}</p>
-        <h1 class="ContentDetail__title">{{ content.title }}</h1>
+        <p>Categoría | {{ content.category.name }}</p>
+        <h1 class="ContentDetail__title">
+          {{ content.title }}
+        </h1>
         <p>
           {{ content.description }}
         </p>
@@ -13,11 +15,9 @@
         <p>
           Fecha límite de acceso : {{ content.date_limit | date: "mediumDate" }}
         </p>
-
+        <h4>Etiquetas:</h4>
         <mat-chip-list aria-label="Etiquetas">
-          <mat-chip *ngFor="let tag of content.tags" color="accent" selected>{{
-            tag
-          }}</mat-chip>
+          <mat-chip *ngFor="let tag of content.tags">{{ tag }}</mat-chip>
         </mat-chip-list>
       </div>
     </div>

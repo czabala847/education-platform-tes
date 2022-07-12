@@ -1,0 +1,9 @@
+@import "../../../../styles/vars";
+
+mat-form-field {
+  background-color: $color-white;
+  color: $color-black;
+  width: 80%;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}

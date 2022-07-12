@@ -18,6 +18,10 @@
   align-items: center;
   overflow: hidden;
 
+  h4 {
+    margin-bottom: 0.2rem;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 1fr;

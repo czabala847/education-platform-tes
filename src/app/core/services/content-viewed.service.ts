@@ -31,4 +31,10 @@ export class ContentViewedService {
   searchViewed(idContent: number): boolean {
     return this.getDataStorage().includes(idContent);
   }
+
+  removeViewed(idContent: number): void {
+    let viewedList: number[] = this.getDataStorage();
+    viewedList = viewedList.filter((id) => id !== idContent);
+    localStorage.setItem('viewed', JSON.stringify(viewedList));
+  }
 }

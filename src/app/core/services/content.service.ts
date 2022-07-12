@@ -39,4 +39,8 @@ export class ContentService {
   getAll(): Observable<Content[]> {
     return this.http.get<Content[]>(`${this.urlApi}/content`);
   }
+
+  getByName(name: string): Observable<Content[]> {
+    return this.http.get<Content[]>(`${this.urlApi}/content/name/${name}`);
+  }
 }
