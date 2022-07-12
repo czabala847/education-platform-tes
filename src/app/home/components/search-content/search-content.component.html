@@ -1,0 +1,25 @@
+<form autocomplete="off" class="animate__animated animate__fadeInUp">
+  <mat-form-field appearance="fill">
+    <mat-label>¿Que quieres aprender?</mat-label>
+    <input
+      type="text"
+      placeholder="Angular JS..."
+      matInput
+      [matAutocomplete]="auto"
+      [formControl]="queryName"
+      name="query"
+    />
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      (optionSelected)="optionSelected($event)"
+    >
+      <mat-option *ngFor="let content of contents" [value]="content">
+        {{ content.title }}
+      </mat-option>
+      <mat-option *ngIf="contents.length === 0 && !textEmpty">
+        <p>No se encontró ningún resultado</p>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
