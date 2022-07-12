@@ -10,11 +10,13 @@
   </div>
 </section>
 
-<app-tags-category
+<app-tabs-category
   [categories]="categories"
   [category_id]="category_id"
-></app-tags-category>
+></app-tabs-category>
 
-<app-contents [contents]="contents" [loading]="loading"></app-contents>
+<div class="Contents__list">
+  <app-contents [contents]="contents" [loading]="loading"></app-contents>
+</div>
 
 <router-outlet></router-outlet>
