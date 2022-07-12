@@ -1,6 +1,6 @@
 # EducationPlatform
 
-![Education Platform](./src/assets/images/captura.PNG)
+![Education Platform](./src/assets/images/captura.png)
 
 ## Descripción 📖
 
