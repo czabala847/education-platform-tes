@@ -18,15 +18,17 @@
       mat-raised-button
       [routerLink]="['/content/', content.id]"
     >
+      <mat-icon aria-hidden="false">open_in_new</mat-icon>
       Ver más
     </button>
-    <!-- <button
+    <button
       *ngIf="viewed"
       color="accent"
       mat-raised-button
-      (click)="openDialog('3000ms', '1500ms')"
+      (click)="openDialog()"
     >
+      <mat-icon aria-hidden="false" aria-label="Visto">visibility</mat-icon>
       Visto
-    </button> -->
+    </button>
   </mat-card-actions>
 </mat-card>

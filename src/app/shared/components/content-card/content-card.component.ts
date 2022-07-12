@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Content } from 'src/app/core/interfaces/ContentInterface';
 import { ContentViewedService } from 'src/app/core/services/content-viewed.service';
+import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-content-card',
@@ -12,7 +13,10 @@ export class ContentCardComponent implements OnInit {
   @Input() content!: Content;
   viewed: boolean = false;
 
-  constructor(private contentViewedService: ContentViewedService) {}
+  constructor(
+    private contentViewedService: ContentViewedService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     if (this.content) {
@@ -20,5 +24,17 @@ export class ContentCardComponent implements OnInit {
     }
   }
 
-  openDialog() {}
+  openDialog(): void {
+    this.dialog
+      .open(DialogConfirmComponent, {
+        data: `¿Quitar contenido de vistos?`,
+      })
+      .afterClosed()
+      .subscribe((confirm: Boolean) => {
+        if (confirm) {
+          this.contentViewedService.removeViewed(this.content.id);
+          this.viewed = false;
+        }
+      });
+  }
 }
