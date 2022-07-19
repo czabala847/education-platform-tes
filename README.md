@@ -4,7 +4,7 @@
 
 ## Descripción 📖
 
-Prueba técnica para el cargo de Desarrollador Frontend, plataforma que brinda contenido a los usuarios, los contenidos estan clasificados por categorias, la página permite
+Plataforma que brinda contenido a los usuarios, los contenidos estan clasificados por categorias, la página permite
 filtrar los contenidos por su respectiva categoria, ver detalle de un contenido, buscar contenidos y marcar los contenidos como vistos o no.
 
 ## Tecnologias utilizadas
